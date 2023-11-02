@@ -29,7 +29,7 @@ export default function Header() {
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           <Link
             component={RouterLink}
-            sx={{ color: "inherit" }}
+            sx={{ color: "red" }}
             underline="none"
             to="/"
           >

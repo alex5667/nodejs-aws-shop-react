@@ -1,9 +1,7 @@
 {
   "app": "npx ts-node --project tsconfig-dev.json --prefer-ts-exts bin/cdk.ts",
   "watch": {
-    "include": [
-      "bin/cdk.ts"
-    ],
+    "include": ["bin/cdk.ts"],
     "exclude": [
       "README.md",
       "cdk*.json",

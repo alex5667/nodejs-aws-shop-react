@@ -1,31 +1,28 @@
 {
   "version": "34.0.0",
   "artifacts": {
-    "ShopStack.assets": {
+    "MyShopStack.assets": {
       "type": "cdk:asset-manifest",
       "properties": {
-        "file": "ShopStack.assets.json",
+        "file": "MyShopStack.assets.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
       }
     },
-    "ShopStack": {
+    "MyShopStack": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://unknown-account/eu-west-1",
       "properties": {
-        "templateFile": "ShopStack.template.json",
+        "templateFile": "MyShopStack.template.json",
         "terminationProtection": false,
-        "tags": {
-          "delete-on-destroy": "true"
-        },
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-eu-west-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-eu-west-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-eu-west-1/3a158a5782938bdb218a2a03240336ea276e100ffd09ca94bdaa4cc5d46e8bf8.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-eu-west-1/96728dc289a3ccf79137b0f42f28cca51b2187d35fc037726b967e34069974f2.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
-          "ShopStack.assets"
+          "MyShopStack.assets"
         ],
         "lookupRole": {
           "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-eu-west-1",
@@ -34,112 +31,137 @@
         }
       },
       "dependencies": [
-        "ShopStack.assets"
+        "MyShopStack.assets"
       ],
       "metadata": {
-        "/ShopStack": [
-          {
-            "type": "aws:cdk:stack-tags",
-            "data": [
-              {
-                "Key": "delete-on-destroy",
-                "Value": "true"
-              }
-            ]
-          }
-        ],
-        "/ShopStack/ShopBucket/Resource": [
+        "/MyShopStack/MyShopBucket/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "ShopBucket86A369B0"
+            "data": "MyShopBucket3363D19F"
           }
         ],
-        "/ShopStack/ShopBucket/Policy/Resource": [
+        "/MyShopStack/MyShopBucket/Policy/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "ShopBucketPolicyB134C7ED"
+            "data": "MyShopBucketPolicyD66D75F8"
           }
         ],
-        "/ShopStack/ShopBucket/AutoDeleteObjectsCustomResource/Default": [
+        "/MyShopStack/MyShopBucket/AutoDeleteObjectsCustomResource/Default": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "ShopBucketAutoDeleteObjectsCustomResource0129D4C3"
+            "data": "MyShopBucketAutoDeleteObjectsCustomResourceA7165882"
           }
         ],
-        "/ShopStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+        "/MyShopStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
           }
         ],
-        "/ShopStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+        "/MyShopStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
           }
         ],
-        "/ShopStack/ShopBucketIdentity/Resource": [
+        "/MyShopStack/MyShopBucketIdentity/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "ShopBucketIdentity5D2835BA"
+            "data": "MyShopBucketIdentity562D68EB"
           }
         ],
-        "/ShopStack/ShopDistribution/Resource": [
+        "/MyShopStack/MyShopDistribution/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "ShopDistributionF05F51E1"
+            "data": "MyShopDistributionCDAE0466"
           }
         ],
-        "/ShopStack/DeployApp/AwsCliLayer/Resource": [
+        "/MyShopStack/DeployApp/AwsCliLayer/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "DeployAppAwsCliLayerAEF99B2F"
           }
         ],
-        "/ShopStack/DeployApp/CustomResource/Default": [
+        "/MyShopStack/DeployApp/CustomResource/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "DeployAppCustomResourceDEE6DDD6"
           }
         ],
-        "/ShopStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource": [
+        "/MyShopStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265"
           }
         ],
-        "/ShopStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource": [
+        "/MyShopStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF"
           }
         ],
-        "/ShopStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource": [
+        "/MyShopStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536"
           }
         ],
-        "/ShopStack/CDKMetadata/Default": [
+        "/MyShopStack/Invalidation/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Invalidation433DA914"
+          }
+        ],
+        "/MyShopStack/Invalidation/CustomResourcePolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "InvalidationCustomResourcePolicyF9F4DFA6"
+          }
+        ],
+        "/MyShopStack/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+          }
+        ],
+        "/MyShopStack/AWS679f53fac002430cb0da5b7982bd2287/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AWS679f53fac002430cb0da5b7982bd22872D164C4C"
+          }
+        ],
+        "/MyShopStack/СloudFrontURL": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "loudFrontURL"
+          }
+        ],
+        "/MyShopStack/bucketUrl": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "bucketUrl"
+          }
+        ],
+        "/MyShopStack/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CDKMetadata"
           }
         ],
-        "/ShopStack/BootstrapVersion": [
+        "/MyShopStack/BootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "BootstrapVersion"
           }
         ],
-        "/ShopStack/CheckBootstrapVersion": [
+        "/MyShopStack/CheckBootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CheckBootstrapVersion"
           }
         ]
       },
-      "displayName": "ShopStack"
+      "displayName": "MyShopStack"
     },
     "Tree": {
       "type": "cdk:tree",

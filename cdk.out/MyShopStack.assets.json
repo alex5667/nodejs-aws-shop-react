@@ -57,15 +57,29 @@
         }
       }
     },
-    "3a158a5782938bdb218a2a03240336ea276e100ffd09ca94bdaa4cc5d46e8bf8": {
+    "17c16a3854838fd3ff4bda08146122a6701f33b9c86ae17f415ad0dc47a97544": {
       "source": {
-        "path": "ShopStack.template.json",
+        "path": "asset.17c16a3854838fd3ff4bda08146122a6701f33b9c86ae17f415ad0dc47a97544",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-eu-west-1": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-eu-west-1",
+          "objectKey": "17c16a3854838fd3ff4bda08146122a6701f33b9c86ae17f415ad0dc47a97544.zip",
+          "region": "eu-west-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-eu-west-1"
+        }
+      }
+    },
+    "96728dc289a3ccf79137b0f42f28cca51b2187d35fc037726b967e34069974f2": {
+      "source": {
+        "path": "MyShopStack.template.json",
         "packaging": "file"
       },
       "destinations": {
         "current_account-eu-west-1": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-eu-west-1",
-          "objectKey": "3a158a5782938bdb218a2a03240336ea276e100ffd09ca94bdaa4cc5d46e8bf8.json",
+          "objectKey": "96728dc289a3ccf79137b0f42f28cca51b2187d35fc037726b967e34069974f2.json",
           "region": "eu-west-1",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-eu-west-1"
         }

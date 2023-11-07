@@ -1,20 +1,16 @@
 {
  "Resources": {
-  "ShopBucket86A369B0": {
+  "MyShopBucket3363D19F": {
    "Type": "AWS::S3::Bucket",
    "Properties": {
-    "BucketName": "nodejs-aws-shop",
+    "BucketName": "nodejs-aws-myshop",
     "Tags": [
      {
       "Key": "aws-cdk:auto-delete-objects",
       "Value": "true"
      },
      {
-      "Key": "aws-cdk:cr-owned:045e215c",
-      "Value": "true"
-     },
-     {
-      "Key": "delete-on-destroy",
+      "Key": "aws-cdk:cr-owned:dbafa757",
       "Value": "true"
      }
     ]
@@ -22,14 +18,14 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "ShopStack/ShopBucket/Resource"
+    "aws:cdk:path": "MyShopStack/MyShopBucket/Resource"
    }
   },
-  "ShopBucketPolicyB134C7ED": {
+  "MyShopBucketPolicyD66D75F8": {
    "Type": "AWS::S3::BucketPolicy",
    "Properties": {
     "Bucket": {
-     "Ref": "ShopBucket86A369B0"
+     "Ref": "MyShopBucket3363D19F"
     },
     "PolicyDocument": {
      "Statement": [
@@ -52,7 +48,7 @@
        "Resource": [
         {
          "Fn::GetAtt": [
-          "ShopBucket86A369B0",
+          "MyShopBucket3363D19F",
           "Arn"
          ]
         },
@@ -62,7 +58,7 @@
           [
            {
             "Fn::GetAtt": [
-             "ShopBucket86A369B0",
+             "MyShopBucket3363D19F",
              "Arn"
             ]
            },
@@ -82,7 +78,7 @@
        "Principal": {
         "CanonicalUser": {
          "Fn::GetAtt": [
-          "ShopBucketIdentity5D2835BA",
+          "MyShopBucketIdentity562D68EB",
           "S3CanonicalUserId"
          ]
         }
@@ -90,7 +86,7 @@
        "Resource": [
         {
          "Fn::GetAtt": [
-          "ShopBucket86A369B0",
+          "MyShopBucket3363D19F",
           "Arn"
          ]
         },
@@ -100,7 +96,7 @@
           [
            {
             "Fn::GetAtt": [
-             "ShopBucket86A369B0",
+             "MyShopBucket3363D19F",
              "Arn"
             ]
            },
@@ -116,7 +112,7 @@
        "Principal": {
         "CanonicalUser": {
          "Fn::GetAtt": [
-          "ShopBucketIdentity5D2835BA",
+          "MyShopBucketIdentity562D68EB",
           "S3CanonicalUserId"
          ]
         }
@@ -127,7 +123,7 @@
          [
           {
            "Fn::GetAtt": [
-            "ShopBucket86A369B0",
+            "MyShopBucket3363D19F",
             "Arn"
            ]
           },
@@ -141,10 +137,10 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "ShopStack/ShopBucket/Policy/Resource"
+    "aws:cdk:path": "MyShopStack/MyShopBucket/Policy/Resource"
    }
   },
-  "ShopBucketAutoDeleteObjectsCustomResource0129D4C3": {
+  "MyShopBucketAutoDeleteObjectsCustomResourceA7165882": {
    "Type": "Custom::S3AutoDeleteObjects",
    "Properties": {
     "ServiceToken": {
@@ -154,16 +150,16 @@
      ]
     },
     "BucketName": {
-     "Ref": "ShopBucket86A369B0"
+     "Ref": "MyShopBucket3363D19F"
     }
    },
    "DependsOn": [
-    "ShopBucketPolicyB134C7ED"
+    "MyShopBucketPolicyD66D75F8"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "ShopStack/ShopBucket/AutoDeleteObjectsCustomResource/Default"
+    "aws:cdk:path": "MyShopStack/MyShopBucket/AutoDeleteObjectsCustomResource/Default"
    }
   },
   "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092": {
@@ -188,7 +184,7 @@
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "ShopStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role"
+    "aws:cdk:path": "MyShopStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role"
    }
   },
   "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F": {
@@ -216,7 +212,7 @@
       [
        "Lambda function for auto-deleting objects in ",
        {
-        "Ref": "ShopBucket86A369B0"
+        "Ref": "MyShopBucket3363D19F"
        },
        " S3 bucket."
       ]
@@ -227,25 +223,25 @@
     "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
    ],
    "Metadata": {
-    "aws:cdk:path": "ShopStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler",
+    "aws:cdk:path": "MyShopStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler",
     "aws:asset:path": "asset.b7f33614a69548d6bafe224d751a7ef238cde19097415e553fe8b63a4c8fd8a6",
     "aws:asset:property": "Code"
    }
   },
-  "ShopBucketIdentity5D2835BA": {
+  "MyShopBucketIdentity562D68EB": {
    "Type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
    "Properties": {
     "CloudFrontOriginAccessIdentityConfig": {
      "Comment": {
-      "Ref": "ShopBucket86A369B0"
+      "Ref": "MyShopBucket3363D19F"
      }
     }
    },
    "Metadata": {
-    "aws:cdk:path": "ShopStack/ShopBucketIdentity/Resource"
+    "aws:cdk:path": "MyShopStack/MyShopBucketIdentity/Resource"
    }
   },
-  "ShopDistributionF05F51E1": {
+  "MyShopDistributionCDAE0466": {
    "Type": "AWS::CloudFront::Distribution",
    "Properties": {
     "DistributionConfig": {
@@ -259,7 +255,7 @@
      "DefaultCacheBehavior": {
       "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
       "Compress": true,
-      "TargetOriginId": "ShopStackShopDistributionOrigin189C7EEF6",
+      "TargetOriginId": "MyShopStackMyShopDistributionOrigin155A2CCC0",
       "ViewerProtocolPolicy": "redirect-to-https"
      },
      "DefaultRootObject": "index.html",
@@ -270,11 +266,11 @@
       {
        "DomainName": {
         "Fn::GetAtt": [
-         "ShopBucket86A369B0",
+         "MyShopBucket3363D19F",
          "RegionalDomainName"
         ]
        },
-       "Id": "ShopStackShopDistributionOrigin189C7EEF6",
+       "Id": "MyShopStackMyShopDistributionOrigin155A2CCC0",
        "S3OriginConfig": {
         "OriginAccessIdentity": {
          "Fn::Join": [
@@ -282,7 +278,7 @@
           [
            "origin-access-identity/cloudfront/",
            {
-            "Ref": "ShopBucketIdentity5D2835BA"
+            "Ref": "MyShopBucketIdentity562D68EB"
            }
           ]
          ]
@@ -290,16 +286,10 @@
        }
       }
      ]
-    },
-    "Tags": [
-     {
-      "Key": "delete-on-destroy",
-      "Value": "true"
-     }
-    ]
+    }
    },
    "Metadata": {
-    "aws:cdk:path": "ShopStack/ShopDistribution/Resource"
+    "aws:cdk:path": "MyShopStack/MyShopDistribution/Resource"
    }
   },
   "DeployAppAwsCliLayerAEF99B2F": {
@@ -314,7 +304,7 @@
     "Description": "/opt/awscli/aws"
    },
    "Metadata": {
-    "aws:cdk:path": "ShopStack/DeployApp/AwsCliLayer/Resource",
+    "aws:cdk:path": "MyShopStack/DeployApp/AwsCliLayer/Resource",
     "aws:asset:path": "asset.3fb6287214999ddeafa7cd0e3e58bc5144c8678bb720f3b5e45e8fd32f333eb3.zip",
     "aws:asset:is-bundled": false,
     "aws:asset:property": "Content"
@@ -338,11 +328,11 @@
      "a1a29493d1ad06418e6d9cab754dd859fbd8def927645001771c1c87da910d58.zip"
     ],
     "DestinationBucketName": {
-     "Ref": "ShopBucket86A369B0"
+     "Ref": "MyShopBucket3363D19F"
     },
     "Prune": true,
     "DistributionId": {
-     "Ref": "ShopDistributionF05F51E1"
+     "Ref": "MyShopDistributionCDAE0466"
     },
     "DistributionPaths": [
      "/*"
@@ -351,7 +341,7 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "ShopStack/DeployApp/CustomResource/Default"
+    "aws:cdk:path": "MyShopStack/DeployApp/CustomResource/Default"
    }
   },
   "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265": {
@@ -382,16 +372,10 @@
        ]
       ]
      }
-    ],
-    "Tags": [
-     {
-      "Key": "delete-on-destroy",
-      "Value": "true"
-     }
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "ShopStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource"
+    "aws:cdk:path": "MyShopStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource"
    }
   },
   "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF": {
@@ -449,7 +433,7 @@
        "Resource": [
         {
          "Fn::GetAtt": [
-          "ShopBucket86A369B0",
+          "MyShopBucket3363D19F",
           "Arn"
          ]
         },
@@ -459,7 +443,7 @@
           [
            {
             "Fn::GetAtt": [
-             "ShopBucket86A369B0",
+             "MyShopBucket3363D19F",
              "Arn"
             ]
            },
@@ -488,7 +472,7 @@
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "ShopStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource"
+    "aws:cdk:path": "MyShopStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource"
    }
   },
   "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536": {
@@ -518,12 +502,6 @@
      ]
     },
     "Runtime": "python3.9",
-    "Tags": [
-     {
-      "Key": "delete-on-destroy",
-      "Value": "true"
-     }
-    ],
     "Timeout": 900
    },
    "DependsOn": [
@@ -531,8 +509,131 @@
     "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265"
    ],
    "Metadata": {
-    "aws:cdk:path": "ShopStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource",
+    "aws:cdk:path": "MyShopStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource",
     "aws:asset:path": "asset.9eb41a5505d37607ac419321497a4f8c21cf0ee1f9b4a6b29aa04301aea5c7fd",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "Invalidation433DA914": {
+   "Type": "Custom::AWS",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
+      "Arn"
+     ]
+    },
+    "Create": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"service\":\"CloudFront\",\"action\":\"createInvalidation\",\"parameters\":{\"DistributionId\":\"",
+       {
+        "Ref": "MyShopDistributionCDAE0466"
+       },
+       "\",\"InvalidationBatch\":{\"CallerReference\":\"1699302753483\",\"Paths\":{\"Quantity\":1,\"Items\":[\"/*\"]}}},\"physicalResourceId\":{\"id\":\"InvalidationId\"}}"
+      ]
+     ]
+    },
+    "InstallLatestAwsSdk": false
+   },
+   "DependsOn": [
+    "InvalidationCustomResourcePolicyF9F4DFA6",
+    "MyShopDistributionCDAE0466"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "MyShopStack/Invalidation/Resource/Default"
+   }
+  },
+  "InvalidationCustomResourcePolicyF9F4DFA6": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "cloudfront:CreateInvalidation",
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "InvalidationCustomResourcePolicyF9F4DFA6",
+    "Roles": [
+     {
+      "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+     }
+    ]
+   },
+   "DependsOn": [
+    "MyShopDistributionCDAE0466"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "MyShopStack/Invalidation/CustomResourcePolicy/Resource"
+   }
+  },
+  "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyShopStack/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource"
+   }
+  },
+  "AWS679f53fac002430cb0da5b7982bd22872D164C4C": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-eu-west-1"
+     },
+     "S3Key": "17c16a3854838fd3ff4bda08146122a6701f33b9c86ae17f415ad0dc47a97544.zip"
+    },
+    "Handler": "index.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs18.x",
+    "Timeout": 120
+   },
+   "DependsOn": [
+    "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "MyShopStack/AWS679f53fac002430cb0da5b7982bd2287/Resource",
+    "aws:asset:path": "asset.17c16a3854838fd3ff4bda08146122a6701f33b9c86ae17f415ad0dc47a97544",
     "aws:asset:is-bundled": false,
     "aws:asset:property": "Code"
    }
@@ -540,10 +641,30 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/21RXWtCMQz9Lb7XTOfLXvWKMBhMFPZ6qW2UaG87mlaR0v++9l4/NhgUzkl6kpymrzCdzGA6khceK30aG9pB2gapTqKk2sQzSIuoThhEs7c3NsDaGVLXZ/oWD8FCMmahjIt6750NkD49HcjOlULmd402UOiLm6pZVc2/iiVx8LSLgZyt8t9xFjxrk8Zv465d0cMwe/lICMmMgWFeIQsju52WkEqbD3lF/4Wea9st2YPB4OwqWtUPepAivfMsSHaQNs5gTff43MHAchZN5OC6DbKLXg3KB/9ztfbuTBq96N2VnZfHH24eW1P9teULlCGYX7gx1FsW9+osrNMIR345T9+gnMnoyERjH8veOoTNgD929PSS4AEAAA=="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/21RTWsCMRD9Ld5jqvXSq64IhYKi0OsSk1HGzSaSSRQJ+9+bZLdrSwuBeW/y8uYjr3w+W/D5RNxpKlUz1Xjk8eCFbFhK1ZEWPK6CbMCz6mQG1Ied1Sgfz/TAe7ISBB2T2gZ1ctZ4HrcOz2iWUgLRuwLj0ZfHVdZssuZfxRrJOzwGj9Zk+U/eMVrUUcFV20eb9LyvvR4TTBCBJ77MoWNatEcleEw2H+IB7hMcZdsDmrMGb80mGFkKjSBJv3HHULQ87q2GnC7xuYMedR2rAnnb7oFscLJXjvjX1c7ZGypwrHSXdp6GPw891jr3V6cvkBr58k6VxtIyG81kMavdwKmo/tTeBn8NaXRjFfALvdzmbzyd2eRCiFMX0pJb4Ps+fgGCZ5HqDQIAAA=="
    },
    "Metadata": {
-    "aws:cdk:path": "ShopStack/CDKMetadata/Default"
+    "aws:cdk:path": "MyShopStack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "loudFrontURL": {
+   "Description": "The URL of the cloudfront",
+   "Value": {
+    "Fn::GetAtt": [
+     "MyShopDistributionCDAE0466",
+     "DomainName"
+    ]
+   }
+  },
+  "bucketUrl": {
+   "Description": "The URL of the bucket",
+   "Value": {
+    "Fn::GetAtt": [
+     "MyShopBucket3363D19F",
+     "WebsiteURL"
+    ]
    }
   }
  },

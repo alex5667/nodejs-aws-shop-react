@@ -325,7 +325,7 @@
      }
     ],
     "SourceObjectKeys": [
-     "a1a29493d1ad06418e6d9cab754dd859fbd8def927645001771c1c87da910d58.zip"
+     "03ab7ced668bc8abd8f274a18c3a8f5b176b09609689e9dbcf969798d44e8785.zip"
     ],
     "DestinationBucketName": {
      "Ref": "MyShopBucket3363D19F"
@@ -532,7 +532,7 @@
        {
         "Ref": "MyShopDistributionCDAE0466"
        },
-       "\",\"InvalidationBatch\":{\"CallerReference\":\"1699302753483\",\"Paths\":{\"Quantity\":1,\"Items\":[\"/*\"]}}},\"physicalResourceId\":{\"id\":\"InvalidationId\"}}"
+       "\",\"InvalidationBatch\":{\"CallerReference\":\"1701503469400\",\"Paths\":{\"Quantity\":1,\"Items\":[\"/*\"]}}},\"physicalResourceId\":{\"id\":\"InvalidationId\"}}"
       ]
      ]
     },

@@ -33,7 +33,10 @@ if (import.meta.env.DEV) {
 }
 
 if (!localStorage.getItem("authorization_token")) {
-  localStorage.setItem("authorization_token", "");
+  localStorage.setItem(
+    "authorization_token",
+    "YWxleDU2Njc6VEVTVF9QQVNTV09SRA=="
+  );
 }
 
 const container = document.getElementById("app");

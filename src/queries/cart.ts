@@ -10,10 +10,9 @@ export function useCart() {
       headers: {
         Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
       },
-    });
+    });n
 
     console.log("res.data", res.data);
-    console.log("res", res.data);
 
     const result = (res.data as any).data.cart.items as CartItem[];
     return result;

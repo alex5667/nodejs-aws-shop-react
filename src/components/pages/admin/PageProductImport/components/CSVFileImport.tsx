@@ -31,7 +31,6 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
       const headers = (
         token ? { Authorization: `Basic ${token}` } : {}
       ) as AxiosRequestHeaders;
-
       const response = await axios({
         method: "GET",
         url,

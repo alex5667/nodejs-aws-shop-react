@@ -21,6 +21,7 @@ axios.interceptors.response.use(
     return Promise.reject(error.response);
   }
 );
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: { refetchOnWindowFocus: false, retry: false, staleTime: Infinity },

@@ -17,9 +17,7 @@ This is frontend starter project for nodejs-aws mentoring program. It uses the f
 
 ## Links to deployments
 
- S3 (403, no public access): http://nodejs-aws-myshop.s3-website-eu-west-1.amazonaws.com/
 
-Cloudfront (public access): https://dzlir60tkwrd3.cloudfront.net/ 
 
 ## Available Scripts
 
